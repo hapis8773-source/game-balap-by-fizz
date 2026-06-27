@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Balapan Mobil Seru • EDISI GILA TOTAL 🔥💀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+        }
+        body {
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 10px 10px 15px;
+            color: #fff;
+            background: radial-gradient(circle, #2b0000 0%, #000 70%);
+        }
+        h1 {
+            font-size: clamp(22px, 6vw, 30px);
+            margin-bottom: 3px;
+            text-shadow: 0 0 12px #ff0000, 0 0 25px #ff6600, 0 0 40px #ff0000;
+            text-align: center;
+            letter-spacing: 2px;
+            animation: getarTeks 0.15s infinite alternate;
+        }
+        @keyframes getarTeks {
+            0% { transform: translateX(-1px); }
+            100% { transform: translateX(1px); }
+        }
+        .karya {
+            color: #ffcc00;
+            font-size: clamp(14px, 4vw, 17px);
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px #ff6600, 0 0 20px #ff0000;
+            text-align: center;
+            animation: nyalaCepat 0.3s infinite alternate;
+        }
+        @keyframes nyalaCepat {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .versi {
+            color: #ff2222;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px #ff0000;
+            border: 2px solid #ff0000;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background-color: rgba(255,0,0,0.1);
+        }
+
+        /* LAYAR PEMELIHARAAN GILA ⚠️ */
+        #layarPengumuman {
+            position: fixed;
+            inset: 0;
+            background-color: #0a0000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            border: 8px solid #ff0000;
+            box-shadow: 0 0 50px #ff0000, inset 0 0 50px rgba(255,0,0,0.3);
+            animation: latarBerdenyut 0.4s infinite alternate;
+        }
+        @keyframes latarBerdenyut {
+            0% { background-color: #0a0000; }
+            100% { background-color: #1a0000; }
+        }
+        #layarPengumuman h2 {
+            color: #ff0000;
+            font-size: clamp(24px, 7vw, 32px);
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px #ff0000, 0 0 40px #ff4444;
+            animation: getarTeks 0.1s infinite alternate;
+        }
+        #layarPengumuman .status {
+            color: #ffdd00;
+            font-size: clamp(18px, 5vw, 22px);
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #ff8800;
+        }
+        #layarPengumuman p {
+            font-size: clamp(16px, 4.5vw, 18px);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            max-width: 350px;
+            color: #ffbbbb;
+        }
+        .peringatan-ekstrim {
+            border: 3px solid #ff0000;
+            background-color: rgba(255,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            color: #ff3333;
+            font-weight: bold;
+            font-size: 17px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px #ff0000;
+            animation: bahayaDenyut 0.25s infinite alternate;
+        }
+        @keyframes bahayaDenyut {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.03); }
+        }
+        .hitungan {
+            font-size: 18px;
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 0 0 8px #ff0000;
+        }
+        #layarTerblokir {
+            position: fixed;
+            inset: 0;
+            background-color: #000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            padding: 20px;
+            border: 10px solid #ff0000;
+            box-shadow: 0 0 80px #ff0000;
+            animation: matiLayar 0.1s infinite alternate;
+        }
+        @keyframes matiLayar {
+            0% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+        #layarTerblokir h2 {
+            color: #ff0000;
+            font-size: 32px;
+            text-shadow: 0 0 30px red;
+            margin-bottom: 20px;
+        }
+        .grup-tombol {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .tombol-pengumum {
+            padding: 13px 26px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            border: none;
+            box-shadow: 0 0 15px currentColor;
+        }
+        #tombolPaksa { background-color: #ff0000; color: #fff; }
+        #tombolTunggu { background-color: #333; color: #ffcc00; }
+        .tombol-pengumum:active { transform: scale(0.9); }
+
+        /* GAME AKTIF GILA MODE 🔥 */
+        #pilihMode, #info, #areaGame, #kontrolSentuh, #petunjuk { display: none; }
+        .aktif-game #pilihMode, .aktif-game #info, .aktif-game #areaGame,
+        .aktif-game #kontrolSentuh, .aktif-game #petunjuk { display: flex; }
+        .aktif-game #layarPengumuman { display: none; }
+        .aktif-game body { animation: latarNgebut 0.3s infinite alternate; }
+        @keyframes latarNgebut {
+            0% { background-color: #000; }
+            100% { background-color: #100000; }
+        }
+
+        #pilihMode { gap: 10px; margin-bottom: 15px; flex-wrap: wrap; justify-content: center; }
+        .tombol-mode {
+            padding: 8px 14px;
+            border: 2px solid #ff4400;
+            border-radius: 8px;
+            background-color: rgba(255, 68, 0, 0.15);
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff4400;
+            transition: all 0.1s;
+        }
+        .tombol-mode.aktif { background-color: #ff2200; color: #fff; transform: scale(1.08); box-shadow: 0 0 20px #ff0000; }
+        #info { gap:15px; font-size:17px; font-weight:bold; margin-bottom:12px; justify-content:center; color:#ff6600; text-shadow:0 0 8px #ff2200; }
+
+        #areaGame {
+            width: min(92vw, 340px);
+            height: min(73vh, 640px);
+            background-color: #050000;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid #ff0000;
+            border-radius: 12px;
+            box-shadow: 0 0 40px #ff0000, inset 0 0 40px rgba(255,0,0,0.25);
+            background-image: linear-gradient(rgba(255,50,0,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,50,0,0.18) 1px, transparent 1px);
+            background-size: 35px 35px;
+            animation: gerakLatarGila 0.12s linear infinite;
+        }
+        @keyframes gerakLatarGila {
+            0% { background-position: 0 0; }
+            100% { background-position: 35px 35px; }
+        }
+        .efek-ledakan {
+            position:absolute; inset:0; background:radial-gradient(circle, rgba(255,200,0,0.3) 0%, transparent 60%);
+            animation: ledakCepat 0.2s infinite alternate; pointer-events:none;
+        }
+        @keyframes ledakCepat {
+            0% { opacity:0.2; transform:scale(0.95); }
+            100% { opacity:0.5; transform:scale(1.05); }
+        }
+        .mobil {
+            width:12.5%; height:9%; position:absolute; border-radius:6px; transition:left 0.015s linear; will-change:left,top;
+            background:linear-gradient(135deg, #ff0000, #880000); box-shadow:0 0 18px #ff0000, 0 0 30px #ff4400; border:2px solid #ff8888;
+            animation: goyangMobil 0.08s infinite alternate;
+        }
+        @keyframes goyangMobil {
+            0% { transform:rotate(-1deg); }
+            100% { transform:rotate(1deg); }
+        }
+        #mobilPemain { bottom:8%; left:42%; }
+        #mobilMusuh { background:linear-gradient(135deg, #00ff22, #008811); box-shadow:0 0 18px #00ff44, 0 0 30px #44ff66; border-color:#aaffbb; top:-10%; left:37%; }
+        .bagian-mobil { position:absolute; border-radius:2px; }
+        .kaca { width:70%; height:25%; background:#000; top:10%; left:50%; transform:translateX(-50%); box-shadow:inset 0 0 8px #ff0000; }
+        .lampu-depan { width:82%; height:18%; background:#ffff00; bottom:5%; left:50%; transform:translateX(-50%); box-shadow:0 0 10px #ffff00; }
+        .lampu-belakang { width:82%; height:18%; background:#ff0000; top:5%; left:50%; transform:translateX(-50%); box-shadow:0 0 10px #ff0000; }
+        .roda { width:22%; height:18%; background:#111; border-radius:2px; box-shadow:0 0 5px rgba(255,255,255,0.2); }
+        .roda-kiri {left:0;} .roda-kanan {right:0;} .roda-atas {top:0;} .roda-bawah {bottom:0;}
+
+        #layarMulai, #pesanAkhir {
+            position:absolute; inset:0; background:rgba(0,0,0,0.92); display:flex; flex-direction:column; align-items:center; justify-content:center;
+            font-size:22px; font-weight:bold; z-index:10; padding:15px; text-align:center; border-radius:10px; border:3px solid #ff0000; box-shadow:0 0 40px #ff0000;
+        }
+        #layarMulai p, #pesanAkhir p { text-shadow:0 0 10px #ff4400; }
+        .tombol {
+            margin-top:22px; padding:13px 28px; background:#ff0000; color:#fff; border:none; border-radius:8px; font-size:17px; font-weight:bold;
+            cursor:pointer; box-shadow:0 0 20px #ff0000; transition:all 0.1s;
+        }
+        .tombol:active { transform:scale(0.9); background:#ff3333; }
+        #kontrolSentuh { display:flex; justify-content:space-between; width:min(92vw,340px); margin-top:15px; gap:12px; }
+        .tombol-sentuh {
+            flex:1; padding:18px 10px; background:rgba(255,0,0,0.2); color:#ffcc00; border:3px solid #ff0000; border-radius:10px; font-size:22px; font-weight:bold;
+            touch-action:none; box-shadow:0 0 15px #ff0000; transition:all 0.1s;
+        }
+        .tombol-sentuh:active { background:rgba(255,0,0,0.5); transform:scale(0.93); box-shadow:0 0 25px #ff0000; }
+        #petunjuk { color:#ff8888; margin-top:12px; font-size:13px; text-align:center; font-weight:bold; text-shadow:0 0 6px #ff0000; }
+    </style>
+</head>
+<body>
+    <!-- LAYAR KUNCI PEMELIHARAAN EKSTRIM 🔒 -->
+    <div id="layarPengumuman">
+        <h2>⚠️ PEMELIHARAAN SISTEM EKSTRIM ⚠️</h2>
+        <div class="status">🚫 TERTUTUP RAPAT • JANGAN DIPAKSA MASUK 🚫</div>
+        <p>Sedang disiapkan pembaruan <strong>EDISI GILA TOTAL</strong>. Kecepatan tak terbatas, bahaya nyata, sistem penuh tekanan!</p>
+        <div class="peringatan-ekstrim">
+            💀 PERINGATAN KERAS 💀<br>
+            ❌ DILARANG KERAS MEMAKSA AKSES!<br>
+            ⚠️ <strong>3x PERCOBAAN = BLOKIR PERMANEN & TOTAL!</strong><br>
+            JANGAN COBA-COBA SISTEM INI!
+        </div>
+        <div class="hitungan">⚠️ PERCOBAAN PAKSA: <span id="jmlCoba">0</span> / 3</div>
+        <div class="grup-tombol">
+            <button class="tombol-pengumum" id="tombolPaksa">🔓 NEKAT PAKSA MASUK</button>
+            <button class="tombol-pengumum" id="tombolTunggu">✅ TAAT & TUNGGU</button>
+        </div>
+    </div>
+
+    <!-- LAYAR BLOKIR TOTAL 💀 -->
+    <div id="layarTerblokir">
+        <h2>🚫 AKSES DITUTUP SELAMANYA 🚫</h2>
+        <p style="font-size:20px; color:#ff4444; margin:15px 0;">Kau nekat melanggar aturan sistem!</p>
+        <p style="color:#ff2222; font-weight:bold;">✅ STATUS: DIBLOKIR PERMANEN<br>TIDAK BISA DIAKSES LAGI SELAMANYA!</p>
+    </div>
+
+    <h1>🏎️ BALAPAN SERU • MODE GILA 🔥💀</h1>
+    <div class="karya">✨ CIPTAAN FIZZ • EDISI GILA TOTAL ✨</div>
+    <div class="versi">🔥 v1.0.12 • GILA TOTAL • TANPA BATAS 🔥</div>
+
+    <div id="pilihMode">
+        <button class="tombol-mode" data-mode="gila">GILA | +5 ⚡</button>
+        <button class="tombol-mode aktif" data-mode="sangat-gila">SANGAT GILA | +8 ⚡</button>
+        <button class="tombol-mode" data-mode="gila-parah">GILA PARAH | +15 ⚡💀</button>
+    </div>
+    <div id="info">
+        <div>SKOR: <span id="skor">0</span></div>
+        <div>KECEPATAN: <span id="kecepatan">30</span> 🚀</div>
+        <div>LEVEL: <span id="namaMode">SANGAT GILA</span> 💥</div>
+    </div>
+
+    <div id="areaGame">
+        <div class="efek-ledakan"></div>
+        <div id="layarMulai">
+            <p>🔥 MODE GILA TOTAL AKTIF 🔥</p>
+            <p style="font-size:17px; margin-top:12px; color:#ff6600;">TANPA BATAS • SEMAKIN LAMA SEMAKIN GILA ⚡⚡⚡</p>
+            <p style="font-size:15px; margin-top:10px; color:#ff0000;">SETIAP LEWAT ➡️ KECEPATAN MELONJAK DRAMATIS 💥</p>
+            <button class="tombol" id="tombolMulai">💨 MULAI NGEBUT GILA-GILAAN 💨</button>
+        </div>
+
+        <div id="mobilPemain" class="mobil">
+            <div class="bagian-mobil kaca"></div>
+            <div class="bagian-mobil lampu-depan"></div>
+            <div class="bagian-mobil roda roda-kiri roda-atas"></div>
+            <div class="bagian-mobil roda roda-kanan roda-atas"></div>
+            <div class="bagian-mobil roda roda-kiri roda-bawah"></div>
+            <div class="bagian-mobil roda roda-kanan roda-bawah"></div>
+        </div>
+
+        <div id="mobilMusuh" class="mobil">
+            <div class="bagian-mobil kaca"></div>
+            <div class="bagian-mobil lampu-belakang"></div>
+            <div class="bagian-mobil roda roda-kiri roda-atas"></div>
+            <div class="bagian-mobil roda roda-kanan roda-atas"></div>
+            <div class="bagian-mobil roda roda-kiri roda-bawah"></div>
+            <div class="bagian-mobil roda roda-kanan roda-bawah"></div>
+        </div>
+
+        <div id="pesanAkhir">
+            <p>💥 TABRAKAN KERAS TERJADI 💥</p>
+            <p style="margin-top:12px;">SKOR AKHIR: <span id="skorAkhir">0</span></p>
+            <button class="tombol" id="tombolUlang">🔄 COBA LAGI • TANTANGAN GILA 🔄</button>
+        </div>
+    </div>
+
+    <div id="kontrolSentuh">
+        <button class="tombol-sentuh" id="tombolKiri">⬅️ KIRI CEPAT</button>
+        <button class="tombol-sentuh" id="tombolKanan">KANAN CEPAT ➡️</button>
+    </div>
+    <p id="petunjuk">PC: Panah | HP: Tekan & Tahan • HATI-HATI: KECEPATAN NAIK GILA SETIAP LEWAT!</p>
+
+    <script>
+        // SISTEM KUNCI & BLOKIR GILA 🔒💀
+        const layarKunci = document.getElementById('layarPengumuman');
+        const layarKunciTotal = document.getElementById('layarTerblokir');
+        const tombolNekat = document.getElementById('tombolPaksa');
+        const tombolSetuju = document.getElementById('tombolTunggu');
+        const tampilHitungan = document.getElementById('jmlCoba');
+        let hitung = 0;
+
+        tombolNekat.addEventListener('click', () => {
+            hitung++;
+            tampilHitungan.textContent = hitung;
+            if(hitung < 3) alert(`❌ DITOLAK KERAS! ⚠️ PERINGATAN KE-${hitung}\nMASIH BERANI COBA LAGI = BLOKIR TOTAL!`);
+            else { layarKunci.style.display='none'; layarKunciTotal.style.display='flex'; tombolNekat.disabled=true; }
+        });
+
+        tombolSetuju.addEventListener('click', () => {
+            document.body.classList.add('aktif-game'); // 🔥 BUKA KUNCI • MASUK MODE GILA!
+        });
+
+        // LOGIKA GAME GILA TOTAL 🚀💥
+        const area = document.getElementById('areaGame');
+        const mobilKu = document.getElementById('mobilPemain');
+        const mobilLawan = document.getElementById('mobilMusuh');
+        const tampSkor = document.getElementById('skor');
+        const tampKecepatan = document.getElementById('kecepatan');
+        const tampMode = document.getElementById('namaMode');
+        const layarAkhir = document.getElementById('pesanAkhir');
+        const layarMula = document.getElementById('layarMulai');
+        const btnUlang = document.getElementById('tombolUlang');
+        const btnMula = document.getElementById('tombolMulai');
+        const tampSkorAkhir = document.getElementById('skorAkhir');
+        const btnKiri = document.getElementById('tombolKiri');
+        const btnKanan = document.getElementById('tombolKanan');
+        const btnMode = document.querySelectorAll('.tombol-mode');
+
+        const PENGATURAN = {
+            'gila': {awal:25, naik:5, nama:'GILA 💥'},
+            'sangat-gila': {awal:35, naik:8, nama:'SANGAT GILA ⚡💥'},
+            'gila-parah': {awal:50, naik:15, nama:'GILA PARAH 💀🔥'}
+        };
+        let modeAktif = 'sangat-gila';
+
+        let posX = 42;
+        const gerak = 3.2; // Gerakan mobil makin gesit
+        let skor = 0;
+        let kecepatan = 35;
+        let naikCepat = 8;
+        let posY = -10;
+        let posXlawan = 37;
+        let jalan = false;
+        let tekan = {kiri:false, kanan:false};
+
+        btnMode.forEach(bt => {
+            bt.addEventListener('click', () => {
+                btnMode.forEach(b=>b.classList.remove('aktif')); bt.classList.add('aktif');
+                modeAktif = bt.dataset.mode;
+                tampMode.textContent = PENGATURAN[modeAktif].nama;
+                tampKecepatan.textContent = PENGATURAN[modeAktif].awal;
+            });
+        });
+
+        document.addEventListener('keydown', e=>{if(e.key==='ArrowLeft')tekan.kiri=true;if(e.key==='ArrowRight')tekan.kanan=true;});
+        document.addEventListener('keyup', e=>{if(e.key==='ArrowLeft')tekan.kiri=false;if(e.key==='ArrowRight')tekan.kanan=false;});
+        btnKiri.addEventListener('touchstart',e=>{e.preventDefault();tekan.kiri=true;},{passive:false});
+        btnKiri.addEventListener('touchend',e=>{e.preventDefault();tekan.kiri=false;},{passive:false});
+        btnKanan.addEventListener('touchstart',e=>{e.preventDefault();tekan.kanan=true;},{passive:false});
+        btnKanan.addEventListener('touchend',e=>{e.preventDefault();tekan.kanan=false;},{passive:false});
+
+        function acakLawan(){posXlawan=Math.floor(Math.random()*(80-10))+10;mobilLawan.style.left=posXlawan+'%';}
+        function tabrakan(){let a=mobilKu.getBoundingClientRect(),b=mobilLawan.getBoundingClientRect();return!(a.top>b.bottom||a.bottom<b.top||a.left>b.right||a.right<b.left);}
+
+        function putarGame(){
+            if(!jalan) return;
+            if(tekan.kiri&&posX>2) posX-=gerak;
+            if(tekan.kanan&&posX<86) posX+=gerak;
+            mobilKu.style.left=posX+'%';
+
+            posY+=kecepatan/9; mobilLawan.style.top=posY+'%';
+
+            if(posY>108){
+                posY=-12; acakLawan(); skor+=20;
+                kecepatan+=naikCepat; // ⚡ NAIK DRASTIS!
+                tampSkor.textContent=skor; tampKecepatan.textContent=kecepatan;
+                area.style.animationDuration=`${0.06/(kecepatan/35)}s`; // Latar makin berputar gila
+            }
+
+            if(tabrakan()){jalan=false; tampSkorAkhir.textContent=skor; layarAkhir.style.display='flex';}
+            requestAnimationFrame(putarGame);
+        }
+
+        function mulaiLagi(){
+            let set = PENGATURAN[modeAktif]; jalan=true; skor=0; kecepatan=set.awal; naikCepat=set.naik;
+            posX=42; posY=-10; tampSkor.textContent=0; tampKecepatan.textContent=set.awal;
+            layarAkhir.style.display='none'; layarMula.style.display='none'; acakLawan();
+            area.style.animationDuration='0.12s'; putarGame();
+        }
+        btnMula.addEventListener('click',mulaiLagi); btnUlang.addEventListener('click',mulaiLagi);
+        acakLawan();
+    </script>
+</body>
+</html>
